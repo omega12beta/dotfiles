@@ -1,0 +1,93 @@
+# # all ignore #
+# /*
+# /.**
+# /.gnupg/*/*
+#
+# ### SSH ###
+# /.ssh/id_*
+# /.ssh/*_id_*
+# /.ssh/known_hosts
+#
+# [._]*.s[a-v][a-z]
+# [._]*.sw[a-p]
+# [._]s[a-rt-v][a-z]
+# [._]ss[a-gi-z]
+# [._]sw[a-p]
+# *~
+#
+# !/docs/
+# !/docs/*/*
+# !/_config.yml
+# !/README.md
+# !/LICENSE
+# !.gitignore
+# !.gitkeep
+#
+# # not ignored #
+# !/.bin/**
+#
+# !/.*/alacritty/**
+# !/.*/clipit/**
+# !/.*/coc/**
+# !/.*/Code-OSS/User/*/*
+# !/.*/dunst/**
+# !/.*/gitui/**
+# !/.*/gopass/**
+# !/.*/htop/**
+# !/.*/jrnl/**
+# !/.*/kitty/**
+# !/.*/menus/**
+# !/.*/neofetch/**
+# !/.*/nvim/***
+# !/.*/nvim-qt/**
+# !/.*/polybar/**
+# !/.*/ranger/**
+# !/.*/rofi/**
+# !/.*/spotifyd/**
+# !/.*/systemd/**
+# !/.*/terminator/**
+# !/.*/thefuck/**
+# !/.*/tilda/**
+# !/.*/ulauncher/**
+# !/.*/variety/**
+# !/.*/wtf/**
+# !/.*/xfce4/**
+# !/.*/zbrowse/**
+# !/.*/zconvey/**
+# !/.*/znt/**
+# !/.config/calligra*
+# !/.config/picom.conf
+# !/.config/systemdgenierc
+# !/.config/pavucontrol.ini
+# !/.fzf/**/*.zsh
+# !/.fzf/**/*.vim
+# !/.fzf/bin/fzf-tmux
+# !/.fzf/*stall
+# !/.fzf/*.yml
+# !/.i3/*
+# !/.local/bin/*
+# !/.tmux/conf/**
+# !/.vim/**
+# !/.vscode/**
+# !/.zinit/**
+# !/.zsh/**
+# !/old-configs/.zshrc?
+# !/old-configs/*.zgen-local-plugins
+# !/old-configs/config
+# !/scripts/*
+# !/.zsh*
+# !/.vim*
+# !/.zcompdump
+# !/.tmux.conf
+# !/.fzf.*
+# !/.bash*
+# !/.coc-project
+# !/.dir_colors
+# !/.git*
+# !/.profile
+# !/.Xresources
+# !/.xinitrc
+# !/\!
+# !/*.txt
+#
+#
