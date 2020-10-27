@@ -1,0 +1,88 @@
+[global_config]
+  title_transmit_fg_color = "#15e920"
+  title_transmit_bg_color = "#000000"
+  title_receive_fg_color = "#00ff4a"
+  title_receive_bg_color = "#000000"
+  title_inactive_fg_color = "#ffffff"
+  title_inactive_bg_color = "#000000"
+  suppress_multiple_term_dialog = True
+  title_use_system_font = False
+  title_font = SauceCodePro Nerd Font Mono 11
+[keybindings]
+[profiles]
+  [[default]]
+    background_color = "#002b36"
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_shape = underline
+    cursor_color = "#ff00d5"
+    cursor_color_fg = False
+    font = SauceCodePro Nerd Font Mono 11
+    foreground_color = "#839496"
+    scrollback_lines = 502
+    scrollback_infinite = True
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    use_system_font = False
+  [[Spotifyd]]
+    background_color = "#002b36"
+    background_darkness = 0.7
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    foreground_color = "#839496"
+    exit_action = hold
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    use_custom_command = True
+    custom_command = spotifyd --no-daemon
+  [[SPT]]
+    background_color = "#002b36"
+    background_darkness = 0.4
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    foreground_color = "#839496"
+    exit_action = hold
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    use_custom_command = True
+    custom_command = spt
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+      directory = ""
+  [[SpotifyTUI]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 29:56
+      maximised = False
+      fullscreen = False
+      size = 920, 991
+      title = omega12beta: spotifyd --no-daemon
+      last_active_term = bb1b8437-f23d-421c-8722-1ca36735da23
+      last_active_window = True
+    [[[child1]]]
+      type = HPaned
+      parent = child0
+      order = 0
+      position = 79
+      ratio = 0.08633879781420765
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = SPT
+      uuid = bb1b8437-f23d-421c-8722-1ca36735da23
+      directory = /
+    [[[terminal3]]]
+      type = Terminal
+      parent = child1
+      order = 1
+      profile = Spotifyd
+      uuid = 4c18ec15-6008-4e9f-9ff6-f5d621560cda
+      directory = /
+[plugins]

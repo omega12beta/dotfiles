@@ -1,0 +1,6 @@
+[submodule ".config/.config/polybar/now_playing"]
+	path = .config/.config/polybar/now_playing
+	url = https://github.com/0nse/now_playing
+[submodule "/home/omega12beta/.config/ulauncher/user-themes/Arc-Dark-for-ULauncher"]
+	path = /home/omega12beta/.config/ulauncher/user-themes/Arc-Dark-for-ULauncher
+	url = https://github.com/iboyperson/Arc-Dark-ULauncher

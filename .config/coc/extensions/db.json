@@ -1,0 +1,80 @@
+{
+  "extension": {
+    "JavaScriptSnippets": {
+      "disabled": true
+    },
+    "coc-go": {
+      "disabled": true
+    },
+    "coc-java": {
+      "disabled": true
+    },
+    "ReactSnippets": {
+      "disabled": true
+    },
+    "coc-clock": {
+      "disabled": true
+    },
+    "coc-eslint": {
+      "disabled": true
+    },
+    "coc-imselect": {
+      "disabled": true
+    },
+    "coc-jest": {
+      "disabled": true
+    },
+    "coc-pairs": {
+      "disabled": true
+    },
+    "coc-post": {
+      "disabled": true
+    },
+    "coc-cspell-dicts": {
+      "disabled": true
+    },
+    "coc-pyls": {
+      "disabled": true
+    },
+    "coc-rls": {
+      "disabled": true
+    },
+    "coc-solargraph": {
+      "disabled": true
+    },
+    "coc-stylelint": {
+      "disabled": true
+    },
+    "coc-tslint-plugin": {
+      "disabled": true
+    },
+    "coc-tsserver": {
+      "disabled": true
+    },
+    "coc-vimlsp": {
+      "disabled": true
+    },
+    "coc-prettier": {
+      "disabled": true
+    },
+    "coc-smartf": {
+      "disabled": true
+    },
+    "coc-webpack": {
+      "disabled": true
+    },
+    "coc-nextword": {
+      "disabled": true
+    },
+    "coc-actions": {
+      "disabled": false
+    },
+    "coc-floatinput": {
+      "disabled": false
+    },
+    "coc-yank": {
+      "disabled": false
+    }
+  },
+  "lastUpdate": 1603721708107
+}

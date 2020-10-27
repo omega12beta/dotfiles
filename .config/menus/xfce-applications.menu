@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Menu
+  PUBLIC '-//freedesktop//DTD Menu 1.0//EN'
+  'http://standards.freedesktop.org/menu-spec/menu-1.0.dtd'>
+<Menu>
+	<Name>Xfce</Name>
+	<DefaultAppDirs />
+	<DefaultDirectoryDirs />
+	<DefaultMergeDirs />
+	<Include>
+		<Category>X-Xfce-Toplevel</Category>
+	</Include>
+	<MergeFile type="parent">/etc/xdg/menus/xfce-applications.menu</MergeFile>
+	<Menu>
+		<Name>Accessories</Name>
+		<Directory>xfce-accessories.directory</Directory>
+		<DirectoryDir>/home/omega12beta/.local/share/desktop-directories</DirectoryDir>
+		<Include>
+			<Filename>code-oss.desktop</Filename>
+		</Include>
+		<Layout>
+			<Merge type="menus" />
+			<Filename>xfce4-taskmanager.desktop</Filename>
+			<Filename>xfce4-appfinder.desktop</Filename>
+			<Filename>thunar-bulk-rename.desktop</Filename>
+			<Filename>caffeine.desktop</Filename>
+			<Filename>clipit.desktop</Filename>
+			<Filename>code-oss.desktop</Filename>
+			<Filename>code-oss-url-handler.desktop</Filename>
+			<Filename>compton.desktop</Filename>
+			<Filename>pcmanfm.desktop</Filename>
+			<Filename>hplip.desktop</Filename>
+			<Filename>org.kde.kate.desktop</Filename>
+			<Filename>kleopatra_import.desktop</Filename>
+			<Filename>kvantummanager.desktop</Filename>
+			<Filename>mousepad.desktop</Filename>
+			<Filename>nitrogen.desktop</Filename>
+			<Filename>globaltime.desktop</Filename>
+			<Filename>picom.desktop</Filename>
+			<Filename>xfce4-screenshooter.desktop</Filename>
+			<Filename>xfce4-sensors.desktop</Filename>
+			<Filename>lxshortcut.desktop</Filename>
+			<Filename>stoken-gui.desktop</Filename>
+			<Filename>stoken-gui-small.desktop</Filename>
+			<Filename>thunar.desktop</Filename>
+			<Filename>vim.desktop</Filename>
+			<Filename>xarchiver.desktop</Filename>
+			<Filename>xfburn.desktop</Filename>
+			<Merge type="files" />
+		</Layout>
+	</Menu>
+	<Menu>
+		<Name>Development</Name>
+		<Directory>xfce-development.directory</Directory>
+		<DirectoryDir>/home/omega12beta/.local/share/desktop-directories</DirectoryDir>
+		<Layout>
+			<Merge type="menus" />
+			<Filename>code-oss-url-handler.desktop</Filename>
+			<Filename>electron7.desktop</Filename>
+			<Filename>gtk3-demo.desktop</Filename>
+			<Filename>gtk3-icon-browser.desktop</Filename>
+			<Filename>UserFeedbackConsole.desktop</Filename>
+			<Filename>gtk3-widget-factory.desktop</Filename>
+			<Merge type="files" />
+		</Layout>
+	</Menu>
+	<Menu>
+		<Name>Education</Name>
+		<Directory>xfce-education.directory</Directory>
+		<DirectoryDir>/home/omega12beta/.local/share/desktop-directories</DirectoryDir>
+		<Layout>
+			<Merge type="menus" />
+			<Merge type="files" />
+		</Layout>
+	</Menu>
+	<Menu>
+		<Name>Games</Name>
+		<Directory>xfce-games.directory</Directory>
+		<DirectoryDir>/home/omega12beta/.local/share/desktop-directories</DirectoryDir>
+		<Layout>
+			<Merge type="menus" />
+			<Merge type="files" />
+		</Layout>
+	</Menu>
+	<Menu>
+		<Name>Graphics</Name>
+		<Directory>xfce-graphics.directory</Directory>
+		<Layout>
+			<Merge type="menus" />
+			<Filename>gcolor2.desktop</Filename>
+			<Filename>gimp.desktop</Filename>
+			<Filename>ristretto.desktop</Filename>
+			<Filename>viewnior.desktop</Filename>
+			<Merge type="files" />
+		</Layout>
+	</Menu>
+	<Menu>
+		<Name>Network</Name>
+		<Directory>xfce-network.directory</Directory>
+		<DirectoryDir>/home/omega12beta/.local/share/desktop-directories</DirectoryDir>
+		<Layout>
+			<Merge type="menus" />
+			<Filename>bssh.desktop</Filename>
+			<Filename>bvnc.desktop</Filename>
+			<Filename>io.github.Hexchat.desktop</Filename>
+			<Filename>palemoon.desktop</Filename>
+			<Merge type="files" />
+		</Layout>
+	</Menu>
+	<Menu>
+		<Name>Multimedia</Name>
+		<Directory>xfce-multimedia.directory</Directory>
+		<Layout>
+			<Merge type="menus" />
+			<Filename>org.xfce.Parole.desktop</Filename>
+			<Filename>qv4l2.desktop</Filename>
+			<Filename>qvidcap.desktop</Filename>
+			<Filename>vlc.desktop</Filename>
+			<Filename>volumeicon.desktop</Filename>
+			<Filename>xfburn.desktop</Filename>
+			<Merge type="files" />
+		</Layout>
+	</Menu>
+	<Menu>
+		<Name>Office</Name>
+		<Directory>xfce-office.directory</Directory>
+		<Layout>
+			<Merge type="menus" />
+			<Filename>xfce4-dict.desktop</Filename>
+			<Filename>epdfview.desktop</Filename>
+			<Filename>xfcalendar.desktop</Filename>
+			<Filename>globaltime.desktop</Filename>
+			<Merge type="files" />
+		</Layout>
+	</Menu>
+	<Menu>
+		<Name>Other</Name>
+		<Directory>xfce-other.directory</Directory>
+		<Include>
+			<Filename>gcr-prompter.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>panel-desktop-handler.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>geoclue-demo-agent.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>io.elementary.granite.demo.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>snap-handle-link.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>hp-uiscan.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>i3.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>ktelnetservice5.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>markdown_previewer.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>nm-applet.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>userapp-Pale Moon.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>gcr-viewer.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>geoclue-where-am-i.desktop</Filename>
+		</Include>
+		<Layout>
+			<Merge type="menus" />
+			<Filename>gcr-prompter.desktop</Filename>
+			<Filename>panel-desktop-handler.desktop</Filename>
+			<Filename>geoclue-demo-agent.desktop</Filename>
+			<Filename>io.elementary.granite.demo.desktop</Filename>
+			<Filename>snap-handle-link.desktop</Filename>
+			<Filename>hp-uiscan.desktop</Filename>
+			<Filename>i3.desktop</Filename>
+			<Filename>ktelnetservice5.desktop</Filename>
+			<Filename>markdown_previewer.desktop</Filename>
+			<Filename>nm-applet.desktop</Filename>
+			<Filename>userapp-Pale Moon.desktop</Filename>
+			<Filename>gcr-viewer.desktop</Filename>
+			<Filename>geoclue-where-am-i.desktop</Filename>
+			<Merge type="files" />
+		</Layout>
+	</Menu>
+	<Menu>
+		<Name>System</Name>
+		<Directory>xfce-system.directory</Directory>
+		<DirectoryDir>/home/omega12beta/.local/share/desktop-directories</DirectoryDir>
+		<Include>
+			<Filename>terminator.desktop</Filename>
+		</Include>
+		<Layout>
+			<Merge type="menus" />
+			<Filename>pamac-manager.desktop</Filename>
+			<Filename>bauh.desktop</Filename>
+			<Filename>bauh_tray.desktop</Filename>
+			<Filename>avahi-discover.desktop</Filename>
+			<Filename>thunar-bulk-rename.desktop</Filename>
+			<Filename>conky.desktop</Filename>
+			<Filename>pcmanfm.desktop</Filename>
+			<Filename>gparted.desktop</Filename>
+			<Filename>lstopo.desktop</Filename>
+			<Filename>org.kde.konsole.desktop</Filename>
+			<Filename>lightdm-settings.desktop</Filename>
+			<Filename>gtk-lshw.desktop</Filename>
+			<Filename>cups.desktop</Filename>
+			<Filename>manjaro-hello.desktop</Filename>
+			<Filename>ranger.desktop</Filename>
+			<Filename>xfce4-sensors.desktop</Filename>
+			<Filename>pamac-installer.desktop</Filename>
+			<Filename>pamac-updater.desktop</Filename>
+			<Filename>xfce4-taskmanager.desktop</Filename>
+			<Filename>terminator.desktop</Filename>
+			<Filename>thunar.desktop</Filename>
+			<Filename>urxvt.desktop</Filename>
+			<Filename>urxvtc.desktop</Filename>
+			<Filename>urxvt-tabbed.desktop</Filename>
+			<Filename>uxterm.desktop</Filename>
+			<Filename>xfce4-terminal.desktop</Filename>
+			<Filename>xterm.desktop</Filename>
+			<Merge type="files" />
+		</Layout>
+	</Menu>
+	<Menu>
+		<Name>Settings</Name>
+		<Directory>xfce-settings.directory</Directory>
+		<Menu>
+			<Name>Screensavers</Name>
+			<Directory>xfce-screensavers.directory</Directory>
+			<Layout>
+				<Merge type="menus" />
+				<Merge type="files" />
+			</Layout>
+		</Menu>
+		<Include>
+			<Filename>org.manjaro.pamac.manager.desktop</Filename>
+		</Include>
+		<Layout>
+			<Merge type="menus" />
+			<Separator />
+			<Filename>pamac-manager.desktop</Filename>
+			<Filename>org.manjaro.pamac.manager.desktop</Filename>
+			<Filename>nm-connection-editor.desktop</Filename>
+			<Filename>arandr.desktop</Filename>
+			<Filename>blueman-manager.desktop</Filename>
+			<Filename>caffeine-preferences.desktop</Filename>
+			<Filename>lxappearance.desktop</Filename>
+			<Filename>pcmanfm-desktop-pref.desktop</Filename>
+			<Filename>thunar-settings.desktop</Filename>
+			<Filename>gufw.desktop</Filename>
+			<Filename>lxinput.desktop</Filename>
+			<Filename>kvantummanager.desktop</Filename>
+			<Filename>lightdm-settings.desktop</Filename>
+			<Filename>msm_notifier_settings.desktop</Filename>
+			<Filename>manjaro-settings-manager.desktop</Filename>
+			<Filename>xfce4-power-manager-settings.desktop</Filename>
+			<Filename>qt5ct.desktop</Filename>
+			<Filename>thunar-volman-settings.desktop</Filename>
+			<Menuname>Screensavers</Menuname>
+			<Filename>pamac-updater.desktop</Filename>
+			<Filename>xfce4-terminal-settings.desktop</Filename>
+			<Merge type="files" />
+		</Layout>
+	</Menu>
+	<Layout>
+		<Separator />
+		<Separator />
+		<Separator />
+		<Menuname>Accessories</Menuname>
+		<Menuname>Development</Menuname>
+		<Menuname>Education</Menuname>
+		<Menuname>Games</Menuname>
+		<Menuname>Graphics</Menuname>
+		<Menuname>Network</Menuname>
+		<Menuname>Multimedia</Menuname>
+		<Menuname>Office</Menuname>
+		<Menuname>Other</Menuname>
+		<Menuname>System</Menuname>
+		<Menuname>Settings</Menuname>
+		<Separator />
+	</Layout>
+</Menu>

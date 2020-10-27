@@ -1,0 +1,116 @@
+[DockWidget sharedtooldocker]
+TabbedMode=false
+
+[File Dialogs]
+OpenDocument=/home/omega12beta/Documents
+
+[Interface]
+ResolutionX=14.1732529
+ResolutionY=14.1732529
+Rulers=false
+StatusBarShowLineNumber=true
+StatusBarShowModified=true
+StatusBarShowMouse=false
+StatusBarShowPage=true
+StatusBarShowPageSize=false
+StatusBarShowPageStyle=true
+StatusBarShowWordCount=false
+StatusBarShowZoom=true
+ViewFieldShadings=true
+ViewFormattingChars=false
+ViewFrameBorders=true
+ViewSectionBounds=false
+ViewTableBorders=true
+Zoom=141
+ZoomMode=0
+
+[MainWindow]
+ko_geometry=AdnQywADAAAAAAAdAAAAOAAAB2IAAAQaAAAAHQAAADgAAAdiAAAEGgAAAAAAAAAAB4AAAAAdAAAAOAAAB2IAAAQa
+ko_windowstate=AAAA/wAAAAD9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAfsAAAAUAFMAdABlAG4AYwBpAGwAQgBvAHgAAAAAAP////8AAACeAP///wAAAAEAAAdGAAADx/wCAAAACPsAAAAgAHMAaABhAHIAZQBkAHQAbwBvAGwAZABvAGMAawBlAHIAAAAATgAAAdcAAABwAP////sAAAAgAFMAaABhAHAAZQAgAFAAcgBvAHAAZQByAHQAaQBlAHMAAAAAAP////8AAAAWAP////sAAAAUAFMAdABhAHQAaQBzAHQAaQBjAHMAAAAAAP////8AAADoAP////sAAAAoAFMAbgBhAHAARwB1AGkAZABlACAAUAByAG8AcABlAHIAdABpAGUAcwAAAAAA/////wAAABYA////+wAAAAoARABlAGIAdQBnAAAAAAD/////AAAAcwD////7AAAAFABOAGEAdgBpAGcAYQB0AGkAbwBuAAAAAAD/////AAAAeAD////7AAAAKgBTAGgAYQBwAGUAQwBvAGwAbABlAGMAdABpAG8AbgBEAG8AYwBrAGUAcgAAAABOAAAASwAAAEsACAAV+wAAAA4ATQBvAGQAZQBCAG8AeAEAAAAcAAADxwAAAJsACAAVAAAAAAAAA24AAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAAAAAAD/////AAAAAAAAAAA=
+
+[Misc]
+Units=in
+
+[Recent Dirs]
+OpenDialog[$e]=$HOME/.dotfiles/Documents,$HOME,$HOME/Documents
+
+[RecentFiles]
+File1[$e]=$HOME/Documents/Assignment One-MDS 101(4).docx
+Name1[$e]=Assignment One-MDS 101(4).docx
+
+[Statistics]
+CharnospacesVisible=true
+CharspacesVisible=true
+EastAsianCharactersVisible=true
+FleschVisible=true
+LinesVisible=true
+SentencesVisible=true
+SyllablesVisible=true
+WordsVisible=true
+
+[Stencil Box]
+viewMode=1
+
+[TemplateChooserDialog]
+DetailsPaneSplitterSizes=1222,358
+
+[calligra]
+DevicePlugins=spacenavigator
+DevicePluginsDisabled=
+DockerPlugins=calligradockers,calligra_docker_stencils
+DockerPluginsDisabled=
+ModeBoxHorizontalTabsSide=0
+ShapePlugins=artistictextshape,chartshape,formulashape,musicshape,pathshapes,pictureshape,pluginshape,textshape,threedshape,vectorshape,videoshape
+TextEditingPlugins=autocorrect,changecase,spellcheck
+TextInlinePlugins=textvariables
+ToolPlugins=basicflakesplugin,defaulttools,karbontools
+ToolPluginsDisabled=
+
+[calligrawords]
+State=AAAA/wAAAAD9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAfsAAAAUAFMAdABlAG4AYwBpAGwAQgBvAHgAAAAAAP////8AAACeAP///wAAAAEAAAHLAAADbvwCAAAACPsAAAAgAHMAaABhAHIAZQBkAHQAbwBvAGwAZABvAGMAawBlAHIAAAAATgAAAdcAAABwAP////sAAAAgAFMAaABhAHAAZQAgAFAAcgBvAHAAZQByAHQAaQBlAHMAAAAAAP////8AAAAWAP////sAAAAUAFMAdABhAHQAaQBzAHQAaQBjAHMAAAAAAP////8AAADoAP////sAAAAoAFMAbgBhAHAARwB1AGkAZABlACAAUAByAG8AcABlAHIAdABpAGUAcwAAAAAA/////wAAAGIA////+wAAAAoARABlAGIAdQBnAAAAAAD/////AAAAcwD////7AAAAFABOAGEAdgBpAGcAYQB0AGkAbwBuAAAAAAD/////AAAAeAD////7AAAAKgBTAGgAYQBwAGUAQwBvAGwAbABlAGMAdABpAG8AbgBEAG8AYwBrAGUAcgAAAABOAAAASwAAAEsACAAV+wAAAA4ATQBvAGQAZQBCAG8AeAEAAABOAAADbgAAAJsACAAVAAAFdwAAA24AAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAgAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAAAAAAD/////AAAAAAAAAAAAAAAYAGUAZABpAHQAXwB0AG8AbwBsAGIAYQByAQAAAAD/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+
+[calligrawords][DockWidget Debug]
+Collapsed=false
+DockArea=2
+Locked=false
+
+[calligrawords][DockWidget ModeBox]
+Collapsed=false
+DockArea=2
+Locked=false
+
+[calligrawords][DockWidget Navigation]
+Collapsed=false
+DockArea=2
+Locked=false
+
+[calligrawords][DockWidget Shape Properties]
+Collapsed=false
+DockArea=2
+Locked=false
+
+[calligrawords][DockWidget ShapeCollectionDocker]
+Collapsed=false
+DockArea=2
+Locked=false
+
+[calligrawords][DockWidget SnapGuide Properties]
+Collapsed=false
+DockArea=2
+Locked=false
+
+[calligrawords][DockWidget Statistics]
+Collapsed=false
+DockArea=2
+Locked=false
+
+[calligrawords][DockWidget StencilBox]
+Collapsed=false
+DockArea=1
+Locked=false
+
+[calligrawords][DockWidget sharedtooldocker]
+Collapsed=false
+DockArea=2
+Locked=false

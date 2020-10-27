@@ -1,0 +1,9 @@
+fc-cache\
+
+systemctl list-unit-files
+cd /usr/share/xsessions
+sudo ranger
+sudo nano /usr/share/xsessions/dwm.desktop
+sudo chown -R omega12beta:omega12beta /home/omega12beta-dwm
+gpg --keyserver pgp.mit.edu --recv-keys 4A193C06D35E7C670FA4EF0BA2FB9E081F2D130E
+rg precmd_prompt $HOME

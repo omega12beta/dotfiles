@@ -1,0 +1,1128 @@
+if exists('$SHELL')
+    set shell=$SHELL
+else
+    set shell=/bin/zsh
+endif
+
+" set leader key
+let mapleader=","
+let maplocalleader= "\\"
+
+call plug#begin(expand('~/.dotfiles/.vim/plugged))
+
+" ================= looks and GUI stuff ================== "{{{
+Plug 'vim-airline/vim-airline'                          " airline status bar
+Plug 'vim-airline/vim-airline-themes'                   " Airline Themes
+Plug 'ryanoasis/vim-devicons'                           " pretty icons everywhere
+Plug 'luochen1990/rainbow'                              " rainbow parenthesis
+Plug 'overcache/NeoSolarized'                           " solarized color themes
+Plug 'gregsexton/MatchTag'                              " highlight matching html tags
+
+" ================= Denite ================== "
+Plug 'romgrk/searchReplace.vim'
+Plug 'liuchengxu/vim-clap', {'build': './install.sh'}
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Shougo/denite.nvim'
+Plug 'raghur/fruzzy', {'build': 'python3 ./python3/fruzzy_installer.py'}
+Plug 'Shougo/neomru.vim'
+Plug 'neoclide/denite-git'
+Plug 'chemzqm/denite-extra'
+Plug 'Shougo/neoyank.vim'
+Plug 'pocari/vim-denite-gists'
+Plug 'hara/ctrlp-colorscheme'
+Plug 'zeero/vim-ctrlp-help'
+Plug 'fisadev/vim-ctrlp-cmdpalette'
+Plug 'Shougo/neomru.vim'
+Plug 'rafi/vim-denite-z'
+Plug 'kmnk/denite-dirmark'
+
+" ================= Functionalities ================= "{{{
+Plug 'neoclide/coc.nvim', {'branch': 'release'}         " LSP and more
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }     " fzf itself
+Plug 'junegunn/fzf.vim'                                 " fuzzy search integration
+Plug 'SirVer/ultisnips'                                 " snippets manager
+Plug 'honza/vim-snippets'                               " actual snippets
+Plug 'Yggdroot/indentLine'                              " show indentation lines
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}  " better python
+Plug 'tpope/vim-commentary'                             " better commenting
+Plug 'mhinz/vim-startify'                               " cool start up screen
+Plug 'tpope/vim-fugitive'                               " git support
+Plug 'psliwka/vim-smoothie'                             " some very smooth ass scrolling
+Plug 'tpope/vim-eunuch'                                 " run common Unix commands inside Vim
+Plug 'machakann/vim-sandwich'                           " make sandwiches
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+" Syntax
+Plug 'scrooloose/syntastic'
+
+" File Explorer
+Plug 'scrooloose/nerdtree'
+
+" Search Definitions
+Plug 'pechorin/any-jump.vim'
+
+" substitute, search, and abbreviate multiple variants of a word
+Plug 'tpope/vim-abolish'
+
+" Focus
+Plug 'junegunn/goyo.vim'
+
+" Prettier for Vim
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+" Search Man Pages
+Plug 'vim-utils/vim-man'
+
+" Easy Scratchpad
+Plug 'mtth/scratch.vim'
+
+" Semantic Manager, Style Manager
+Plug 'reedes/vim-wordy'
+
+" Spelling
+Plug 'dpelle/vim-languagetool'
+
+" Syntax for i3-config
+Plug 'potatoesmaster/i3-vim-syntax'
+
+"Its my goddamn computer
+Plug 'vim-scripts/sudo.vim'
+
+" Neosnip
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+
+" Gtags Stuff
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/gutentags_plus'
+
+" zinit syntax
+Plug 'zinit-zsh/zinit-vim-syntax'
+
+call plug#end()
+
+" ==================== general config ======================== "{{{
+set termguicolors                                       " Opaque Background
+set mouse=a                                             " enable mouse scrolling
+set clipboard+=unnamedplus                              " use system clipboard by default
+set tabstop=4 softtabstop=4 shiftwidth=4 autoindent     " tab width
+set expandtab smarttab                                  " tab key actions
+set incsearch ignorecase smartcase hlsearch             " highlight text while searching
+set list listchars=trail:»,tab:»-                       " use tab to navigate in list mode
+set fillchars+=vert:\▏                                  " requires a patched nerd font (try FiraCode)
+set wrap breakindent                                    " wrap long lines to the width set by tw
+set encoding=utf-8                                      " text encoding
+set number                                              " enable numbers on the left
+set relativenumber                                      " current line is 0
+set title                                               " tab title as file name
+set noshowmode                                          " dont show current mode below statusline
+set noshowcmd                                           " to get rid of display of last command
+set conceallevel=2                                      " set this so we wont break indentation plugin
+set splitright                                          " open vertical split to the right
+set splitbelow                                          " open horizontal split to the bottom
+set tw=90                                               " auto wrap lines that are longer than that
+set emoji                                               " enable emojis
+set history=1000                                        " history limit
+set backspace=indent,eol,start                          " sensible backspacing
+set undofile                                            " enable persistent undo
+set undodir=/tmp                                        " undo temp file directory
+set inccommand=nosplit                                  " visual feedback while substituting
+set showtabline=2                                       " always show tabline
+set grepprg=rg\ --vimgrep                               " use rg as default grepper
+set nocompatible
+filetype plugin indent on
+syntax on
+" performance tweaks
+set nocursorline
+set nocursorcolumn
+set scrolljump=5
+set lazyredraw
+set redrawtime=10000
+set synmaxcol=180
+set re=1
+" Searching
+set ignorecase " case insensitive searching
+set smartcase " case-sensitive if expresson contains a capital letter
+set hlsearch " highlight search results
+set incsearch " set incremental search, like modern browsers
+set nolazyredraw " don't redraw while executing macros
+set magic " Set magic on, for regex
+" error bells
+set noerrorbells
+set visualbell
+set t_vb=
+set tm=500
+"" Appearance {{{
+set number " show line numbers
+set wrap " turn on line wrapping
+set wrapmargin=8 " wrap lines when coming within n characters from side
+set linebreak " set soft wrapping
+set showbreak=↪
+set autoindent " automatically set indent of new line
+set ttyfast " faster redrawing
+set diffopt+=vertical,iwhite,internal,algorithm:patience,hiddenoff
+set laststatus=2 " show the status line all the time
+set so=7 " set 7 lines to the cursors - when moving vertical
+set wildmenu " enhanced command line completion
+set showcmd " show incomplete commands
+set noshowmode " don't show which mode disabled for PowerLine
+set wildmode=list:longest " complete files like a shell
+set title " set terminal title
+set showmatch " show matching braces
+set mat=2 " how many tenths of a second to blink
+set updatetime=300
+" Tab control
+set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
+set tabstop=4 " the visible width of tabs
+set softtabstop=4 " edit as if the tabs are 4 characters wide
+set shiftwidth=4 " number of spaces to use for indent and unindent
+set shiftround " round indent to a multiple of 'shiftwidth'
+" code folding settings
+set foldmethod=syntax " fold based on indent
+set foldlevelstart=99
+set foldnestmax=10 " deepest fold is 10 levels
+set nofoldenable " don't fold by default
+set foldlevel=1
+"" Extra Syntax Stuff
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType htmldjango inoremap {{ {{  }}<left><left><left>
+autocmd FileType htmldjango inoremap {% {%  %}<left><left><left>
+autocmd FileType htmldjango inoremap {# {#  #}<left><left><left>
+" Markdown and Journal
+autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType journal setlocal shiftwidth=2 tabstop=2 softtabstop=2
+" Auto commands
+autocmd FileType c,cpp,java,python,javascript autocmd BufWritePre <buffer> %s/\s\+$//e
+" Transparent Background (For i3 and compton)
+highlight Normal guibg=NONE ctermbg=NONE
+highlight LineNr guibg=NONE ctermbg=NONE
+" highlight conflicts
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+"" Abbreviations
+" Some aliases for typoists
+command W w
+command Q q
+command WQ wq
+command Wq wq
+command Qa qa
+command QA qa
+command Wa wa
+command WA wa
+command E e
+abbr W! w!
+abbr Q! q!
+abbr Qall! qall!
+abbr Wq wq
+abbr Wa wa
+abbr wQ wq
+abbr WQ wq
+abbr W w
+abbr Q q
+abbr Qall qall
+abbr funciton function
+abbr teh the
+abbr tempalte template
+abbr fitler filter
+abbr cosnt const
+abbr attribtue attribute
+abbr attribuet attribute
+set autoread " detect when a file is changed
+set textwidth=120
+" required by coc
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=1
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+
+"""" Themes """"
+colorscheme NeoSolarized
+set background=dark
+set termguicolors
+hi Pmenu guibg='#00010a' guifg=white                    " popup menu colors
+hi Comment gui=italic cterm=italic                      " italic comments
+hi Search guibg=#b16286 guifg=#ebdbb2 gui=NONE          " search string highlight color
+hi NonText guifg=bg                                     " mask ~ on empty lines
+hi clear CursorLineNr                                   " use the theme color for relative number
+hi CursorLineNr gui=bold                                " make relative number bold
+hi SpellBad guifg=NONE gui=bold,undercurl               " misspelled words
+" colors for git (especially the gutter)
+hi DiffAdd  guibg=#0f111a guifg=#43a047
+hi DiffChange guibg=#0f111a guifg=#fdd835
+hi DiffRemoved guibg=#0f111a guifg=#e53935
+" coc multi cursor highlight color
+hi CocCursorRange guibg=#b16286 guifg=#ebdbb2
+
+"""" Custom Commands """"
+au BufEnter * set fo-=c fo-=r fo-=o                     " stop annoying auto commenting on new lines
+au FileType help wincmd L                               " open help in vertical split
+au BufWritePre * :%s/\s\+$//e                           " remove trailing whitespaces before saving
+au CursorHold * silent call CocActionAsync('highlight') " highlight match on cursor hold
+" enable spell only if file type is normal text
+let spellable = ['markdown', 'gitcommit', 'txt', 'text', 'liquid', 'rst']
+autocmd BufEnter * if index(spellable, &ft) < 0 | set nospell | else | set spell | endif
+" coc completion popup
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+" startify if no passed argument or all buffers are closed
+augroup noargs
+    " startify when there is no open buffer left
+    autocmd BufDelete * if empty(filter(tabpagebuflist(), '!buflisted(v:val)')) | Startify | endif
+    " open startify on start if no argument was passed
+    autocmd VimEnter * if argc() == 0 | Startify | endif
+augroup END
+" fzf if passed argument is a folder
+augroup folderarg
+    " change working directory to passed directory
+    autocmd VimEnter * if argc() != 0 && isdirectory(argv()[0]) | execute 'cd' fnameescape(argv()[0])  | endif
+    " start startify (fallback if fzf is closed)
+    autocmd VimEnter * if argc() != 0 && isdirectory(argv()[0]) | Startify  | endif
+    " start fzf on passed directory
+    autocmd VimEnter * if argc() != 0 && isdirectory(argv()[0]) | execute 'Files ' fnameescape(argv()[0]) | endif
+augroup END
+" Return to last edit position when opening files
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+" python renaming
+autocmd FileType python nnoremap <leader>rn :Semshi rename <CR>
+" format with available file format formatter
+command! -nargs=0 Format :call CocAction('format')
+" organize imports
+command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
+" files in fzf
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--inline-info']}), <bang>0)
+" advanced grep
+command! -nargs=* -bang Rg call RipgrepFzf(<q-args>, <bang>0)
+
+"""" Functions """"
+" advanced grep(faster with preview)
+function! RipgrepFzf(query, fullscreen)
+    let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+    let initial_command = printf(command_fmt, shellescape(a:query))
+    let reload_command = printf(command_fmt, '{q}')
+    let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+    call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+" startify file icons
+function! StartifyEntryFormat()
+    return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
+endfunction
+" check if last inserted char is a backspace (used by coc pmenu)
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+" show docs on things with K
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+"""" Bindings/PluginSettings """"
+
+"" General Binds ""
+" Haha
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>"
+nnoremap j gj
+nnoremap k gk
+" instead of using Ctrl+w + <movement>:
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+" Map ctrl-movement keys to window switching
+map <C-k> <C-w><Up>
+map <C-j> <C-w><Down>
+map <C-l> <C-w><Right>
+map <C-h> <C-w><Left>
+" Instead of using Ctrl+w + <movement>:
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+" Map ctrl-movement keys to window switching
+map <C-k> <C-w><Up>
+map <C-j> <C-w><Down>
+map <C-l> <C-w><Right>
+map <C-h> <C-w><Left>
+" Switch between buffers with tab
+nmap <C-tab> :bn<CR>
+" close buffer
+nmap <leader>d :bd<CR>
+" close all buffers
+nmap <leader>D :bufdo bd<CR>
+" File to ignore for autocomplete, also used by Ctrlp
+set wildignore+=*.swp,*.jpg,*.png,*.gif,*.pdf,*.bak,*.tar,*.zip,*.tgz
+set wildignore+=*/.hg/*,*/.svn/*,*/.git/*
+set wildignore+=*/vendor/cache/*,*/public/system/*,*/tmp/*,*/log/*,*/solr/data/*,*/.DS_Store
+" Saving and exit
+nmap <leader>q :wqa!<CR>
+nmap <leader>w :w!<CR>
+nmap <leader><Esc> :q!<CR>
+"" the essentials
+noremap <leader>e :PlugInstall<CR>
+noremap <C-q> :wq<CR>
+
+"" Coc ""
+" list of the extensions to make sure are always installed
+let g:coc_global_extensions = [
+      \ 'coc-emoji',
+      \ 'coc-tsserver',
+      \ 'coc-html',
+      \ 'coc-css',
+      \ 'coc-json',
+      \ 'coc-eslint',
+      \ 'coc-tslint-plugin',
+      \ 'coc-prettier',
+      \ 'coc-stylelint',
+      \ 'coc-pyls',
+      \ 'coc-java',
+      \ 'coc-rls',
+      \ 'coc-solargraph',
+      \ 'coc-yaml',
+      \ 'coc-highlight',
+      \ 'coc-emmet',
+      \ 'coc-vimlsp',
+      \ 'coc-snippets',
+      \ 'coc-imselect',
+      \ 'coc-yank',
+      \ 'coc-pairs',
+      \ 'coc-git',
+      \ 'coc-go',
+      \ 'coc-lists',
+      \ 'coc-diagnostic',
+      \ 'coc-gitignore',
+      \ 'coc-project',
+      \ 'coc-post',
+      \ 'coc-clock',
+      \ 'coc-marketplace',
+      \ 'coc-smartf',
+      \ 'coc-jest',
+      \ 'coc-calc',
+      \ 'coc-webpack',
+      \ 'coc-explorer',
+      \ 'coc-spell-checker',
+      \ 'coc-cspell-dicts',
+      \ 'coc-actions',
+      \ 'https://github.com/xabikos/vscode-react',
+      \ 'https://github.com/xabikos/vscode-javascript'
+      \]
+" === Coc.nvim === "
+" use <tab> for trigger completion and navigate to next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+"Close preview window when completion is done.
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+"   <leader>dd    - Jump to definition of current symbol
+"   <leader>dr    - Jump to references of current symbol
+"   <leader>dj    - Jump to implementation of current symbol
+"   <leader>ds    - Fuzzy search current project symbols
+nmap <silent> <leader>dd <Plug>(coc-definition)
+nmap <silent> <leader>dr <Plug>(coc-references)
+nmap <silent> <leader>dj <Plug>(coc-implementation)
+nnoremap <silent> <leader>ds :<C-u>CocList -I -N --top symbols<CR>
+
+" Prettier Settings "
+let g:prettier#autoformat = 1
+nmap <Leader>py <Plug>(Prettier)
+
+" YankRing
+let g:yankring_history_dir = '/tmp'
+" Prevent "clipboard: error: Error: target STRING not available" on startup
+" https://github.com/neovim/neovim/issues/2642
+let g:yankring_clipboard_monitor=0
+
+"" Fugitive ""
+map <C-g>s :Gstatus<CR>
+map <C-g>b :Gblame<CR>
+map <C-g>c :Gcommit
+map <C-g>h :Git checkout
+map <C-g>r :Gread<CR>
+map <C-g>w :Gwrite<CR>
+map <C-g>d :Gdiff<CR>
+map <C-g>p :Gpush<CR>
+map <C-g>g :Gpull<CR>
+
+" Airline Settings "
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
+let g:airline_section_warning = ''
+let g:airline_extensions = ['branch', 'hunks', 'coc', 'tabline']
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'z', 'warning', 'error']]
+let g:airline_skip_empty_sections = 1
+let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
+let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
+" Configure error/warning section to use coc.nvim
+let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
+let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
+" t[number] => switch to the file showed in the top tabs
+" t[ t] => prev tab/next tab
+nmap <leader>t1 <Plug>AirlineSelectTab1
+nmap <leader>t2 <Plug>AirlineSelectTab2
+nmap <leader>t3 <Plug>AirlineSelectTab3
+nmap <leader>t4 <Plug>AirlineSelectTab4
+nmap <leader>t5 <Plug>AirlineSelectTab5
+nmap <leader>t6 <Plug>AirlineSelectTab6
+nmap <leader>t7 <Plug>AirlineSelectTab7
+nmap <leader>t8 <Plug>AirlineSelectTab8
+nmap <leader>t9 <Plug>AirlineSelectTab9
+nmap <leader>t[ <Plug>AirlineSelectPrevTab
+nmap <leader>t] <Plug>AirlineSelectNextTab
+
+" Syntastic Settings "
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"" FZF ""
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
+let g:fzf_tags_command = 'ctags -R'
+let $FZF_DEFAULT_OPTS = '--layout=reverse --inline-info'
+let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git/**' --glob '!build/**' --glob '!.dart_tool/**' --glob '!.idea'"
+nnoremap <silent> <leader>f :Files<CR>
+nmap <leader>b :Buffers<CR>
+nmap <leader>c :Commands<CR>
+nmap <leader>t :BTags<CR>
+nmap <leader>/ :Rg<CR>
+nmap <leader>gc :Commits<CR>
+nmap <leader>gs :GFiles?<CR>
+nmap <leader>sh :History/<CR>
+" show mapping on all modes with F1
+nmap <F1> <plug>(fzf-maps-n)
+imap <F1> <plug>(fzf-maps-i)
+vmap <F1> <plug>(fzf-maps-x)
+
+"" GTags Settings ""
+" enable gtags module
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
+" generate datebases in my cache directory, prevent gtags files polluting my project
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+" change focus to quickfix window after search (optional).
+let g:gutentags_plus_switch = 1
+"Keys (to change if needed)
+let g:gutentags_plus_nomap = 1
+set tags=./.tags;,.tags
+let g:gutentags_project_root = ['.root', '.git', '.svn', '.hg', '.project']
+let g:gutentags_ctags_tagfile = '.tags'
+let g:gutentags_ctags_extra_args = ['--output-format=e-ctags']
+let g:gutentags_ctags_exclude = ['*.json', '*.js', '*.ts', '*.jsx', '*.css', '*.less', '*.sass', '*.go', '*.dart', 'node_modules', 'dist', 'vendor']
+noremap <silent> <leader>gs :GscopeFind s <C-R><C-W><cr>
+noremap <silent> <leader>gg :GscopeFind g <C-R><C-W><cr>
+noremap <silent> <leader>gc :GscopeFind c <C-R><C-W><cr>
+noremap <silent> <leader>gt :GscopeFind t <C-R><C-W><cr>
+noremap <silent> <leader>ge :GscopeFind e <C-R><C-W><cr>
+noremap <silent> <leader>gf :GscopeFind f <C-R>=expand("<cfile>")<cr><cr>
+noremap <silent> <leader>gi :GscopeFind i <C-R>=expand("<cfile>")<cr><cr>
+noremap <silent> <leader>gd :GscopeFind d <C-R><C-W><cr>
+noremap <silent> <leader>ga :GscopeFind a <C-R><C-W><cr>
+noremap <silent> <leader>gz :GscopeFind z <C-R><C-W><cr>
+
+"" Any-Jump Settings ""
+" Normal mode: Jump to definition under cursore
+nnoremap <leader>j :AnyJump<CR>
+" Visual mode: jump to selected text in visual mode
+xnoremap <leader>j :AnyJumpVisual<CR>
+" Normal mode: open previous opened file (after jump)
+nnoremap <leader>ab :AnyJumpBack<CR>
+" Normal mode: open last closed search window again
+nnoremap <leader>al :AnyJumpLastResults<CR>
+" Show line numbers in search rusults
+let g:any_jump_list_numbers = 0
+" Auto search references
+let g:any_jump_references_enabled = 1
+" Auto group results by filename
+let g:any_jump_grouping_enabled = 0
+" Amount of preview lines for each search result
+let g:any_jump_preview_lines_count = 5
+" Max search results, other results can be opened via [a]
+let g:any_jump_max_search_results = 10
+" Prefered search engine: rg or ag
+let g:any_jump_search_prefered_engine = 'ag'
+" Search results list styles:
+let g:any_jump_results_ui_style = 'filename_first'
+" Remove comments line from search results (default: 1)
+let g:any_jump_remove_comments_from_results = 1
+" Custom ignore files
+" default is: ['*.tmp', '*.temp']
+let g:any_jump_ignored_files = ['*.tmp', '*.temp']
+
+"" Startify ""
+let g:startify_padding_left = 10
+let g:startify_session_persistence = 1
+let g:startify_enable_special = 0
+let g:startify_change_to_vcs_root = 1
+let g:startify_lists = [
+    \ { 'type': 'dir'       },
+    \ { 'type': 'files'     },
+    \ { 'type': 'sessions'  },
+    \ { 'type': 'bookmarks' },
+    \ { 'type': 'commands' },
+    \ ]
+let  g:startify_bookmarks =  [
+    \ {'v': '~/.config/nvim'},
+    \ {'d': '~/.dotfiles' }
+    \ ]
+let g:startify_commands = [
+    \ {'ch':  ['Health Check', ':checkhealth']},
+    \ {'ps': ['Plugins status', ':PlugStatus']},
+    \ {'pu': ['Update vim plugins',':PlugUpdate | PlugUpgrade']},
+    \ {'uc': ['Update coc Plugins', ':CocUpdate']},
+    \ {'h':  ['Help', ':help']},
+    \ ]
+let g:startify_custom_header =
+      \ 'startify#pad(g:ascii + startify#fortune#cowsay())'
+
+let g:ascii = [
+ \ '',
+ \ '                                                    ▟▙            ',
+ \ '                                                    ▝▘            ',
+ \ '            ██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖',
+ \ '            ██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██',
+ \ '            ██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██',
+ \ '            ██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██',
+ \ '            ▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀',
+ \ '',
+ \ '',
+ \ '',
+ \]
+
+"" rainbow brackets ""
+let g:rainbow_active = 1
+
+"" Goyo Focus ""
+autocmd! User GoyoEnter nested call helpers#goyo#enter()
+autocmd! User GoyoLeave nested call helpers#goyo#leave()
+
+"" NerdTree ""
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+" close all open buffers on entering a window if the only
+" buffer that's left is the NERDTree buffer
+function! s:CloseIfOnlyNerdTreeLeft()
+	if exists("t:NERDTreeBufName")
+		if bufwinnr(t:NERDTreeBufName) != -1
+			if winnr("$") == 1
+				q
+			endif
+		endif
+	endif
+endfunction
+" toggle file explorer visibility
+map <C-A> :NERDTreeToggle<CR>
+
+" Denite {{{
+
+" Change default UI settings and highlighting
+call denite#custom#option('default', {
+            \ 'auto_resize': 1,
+            \ 'statusline': 0,
+            \ 'winheight': 15,
+            \ 'winminheight': -1,
+            \ 'reversed': 1,
+            \ 'prompt': '❯',
+            \ 'match_highlight': 1,
+            \ 'highlight_prompt': 'Function',
+            \ 'highlight_matched_char': 'Operator',
+            \ 'highlight_matched_range': 'None',
+            \ 'start_filter': 1,
+            \ 'filter_updatetime': 100,
+            \ 'vertical_preview': 1,
+            \ 'floating_preview': 1,
+            \ 'preview_width': float2nr(&columns / 2.3),
+            \ 'preview_height': 15,
+            \ })
+
+" Set cursorline hl
+augroup ps_denite_cursorline
+    au!
+    au WinEnter * if &filetype ==# 'denite'
+        \ |   highlight CursorLineDenite guibg=#282c34 gui=bold
+        \ |   highlight! link CursorLine CursorLineDenite
+        \ | endif
+augroup END
+
+" Fruzzy matcher
+let g:fruzzy#usenative = 0
+let g:fruzzy#sortonempty = 0
+call denite#custom#source('_', 'matchers', ['matcher/fruzzy',
+        \ 'matcher/ignore_globs'])
+
+" Other matcher and sorting options
+call denite#custom#source('line', 'matchers', ['matcher/regexp'])
+call denite#custom#source('default', 'sorters', ['sorter/rank'])
+call denite#custom#source('z', 'sorters', ['sorter_z'])
+
+" Devicon converter
+call denite#custom#source('file/rec,file/rec/noignore,buffer,fast_file_mru,'
+            \ .'directory_rec,directory_rec/noignore,parent_dirs,grep,z',
+            \ 'converters', ['converter/devicons'])
+
+" Ignore some files and directories
+call denite#custom#filter('matcher/ignore_globs', 'ignore_globs',
+        \ ['.git/', '__pycache__/', 'venv/',  'tmp/', 'doc/', 'man://*'])
+
+" Buffer source settings
+call denite#custom#var('buffer', 'date_format', '')
+
+" Neomru
+let g:neomru#file_mru_limit = 750
+let g:neomru#time_format = ''
+let g:neomru#do_validate = 1
+let g:neomru#update_interval = 300
+
+" Use fd for file_rec and ripgrep for grep
+if executable('fd')
+    call denite#custom#var('file/rec', 'command',
+        \ ['fd', '--type', 'f', '--follow', '--hidden', '--exclude', '.git',
+        \ ''])
+    call denite#custom#var('directory_rec', 'command',
+        \ ['fd', '--type', 'd', '--follow', '--hidden', '--exclude', '.git',
+        \ ''])
+    " Define alias that don't ignore vcs files
+    call denite#custom#alias('source', 'file/rec/noignore', 'file/rec')
+    call denite#custom#var('file/rec/noignore', 'command',
+        \ ['fd', '--type', 'f', '--follow', '--hidden', '--exclude', '.git',
+        \ '--no-ignore-vcs', ''])
+    call denite#custom#alias('source', 'directory_rec/noignore',
+        \ 'directory_rec')
+    call denite#custom#var('directory_rec/noignore', 'command',
+        \ ['fd', '--type', 'd', '--follow', '--hidden', '--exclude', '.git',
+        \ '--no-ignore-vcs', ''])
+endif
+if executable('rg')
+    call denite#custom#var('grep', 'command', ['rg'])
+    call denite#custom#var('grep', 'default_opts',
+            \ ['--smart-case', '--vimgrep', '--no-heading'])
+    call denite#custom#var('grep', 'recursive_opts', [])
+    call denite#custom#var('grep', 'pattern_opt', [])
+    call denite#custom#var('grep', 'separator', ['--'])
+    call denite#custom#var('grep', 'final_opts', [])
+endif
+
+" Bookmarks source (dirmark)
+call g:dirmark#set_data_directory_path($CACHE .
+            \ '/plugins/denite/denite-dirmark')
+
+" Functions
+function! s:DeniteScanDir(...)
+    let narrow_dir = input('Input narrowing directory: ', '', 'file')
+    if narrow_dir ==# ''
+        return
+    endif
+    let git_ignore = get(a:, 1, 1)
+    let source = git_ignore == 1 ? 'file/rec' : 'file/rec/noignore'
+    call denite#start([{'name': source, 'args': [narrow_dir]}])
+endfunction
+function! s:DeniteGrep(...)
+    if !executable('rg')
+        echoerr 'ripgrep is not installed or not in  your path.'
+        return
+    endif
+    let l:save_pwd = getcwd()
+    lcd %:p:h
+    let narrow_dir = input('Target: ', '.', 'file')
+    if narrow_dir ==# ''
+        return
+    endif
+    " Don't search gitignored files by default
+    let extra_args = ''
+    let git_ignore = get(a:, 1, 1)
+    if git_ignore == 0
+        let extra_args = '--no-ignore-vcs '
+    endif
+    let filetype = input('Filetype: ', '')
+    if filetype ==# ''
+        let ft_filter = ''
+    else
+        let ft_filter = '--type ' . filetype
+    endif
+    " Allow to run in interactive mode (or require an input pattern)
+    let grep_args = [narrow_dir, extra_args . ft_filter]
+    let interactive = get(a:, 2, 0)
+    if interactive == 1
+        call add (grep_args, '!')
+    endif
+    execute 'lcd ' . l:save_pwd
+    call denite#start([{'name': 'grep', 'args': grep_args}],
+                \ {'start_filter': interactive})
+endfunction
+function! s:DeniteTasklist(...)
+    if a:0 >=1 && a:1 ==# '.'
+        let target = a:1
+    else
+        let target = expand('%')
+    endif
+    call denite#start([{'name': 'grep',
+                \ 'args': [target, '','TODO:\s|FIXME:\s']}])
+endfunction
+function! s:DeniteVisualSearch(direction)
+    let temp = @s
+    norm! gv"sy
+    let visual_selection = @s
+    let visual_selection = escape(visual_selection, '$+%\.{*|@^')
+    let @s = temp
+    call denite#start([{'name': 'line', 'args': [a:direction]}],
+                \ {'input': visual_selection})
+endfunction
+function! s:DeniteBookmarkAddFunc(path)
+    execute 'Denite dirmark/add -default-action=add -immediately-1 -path=' .
+                \ expand(a:path)
+endfunction
+" Note: we need to pass the parent dir of the candidate we want to bookmark
+command -nargs=1 -complete=file DeniteBookmarkAdd
+            \ call s:DeniteBookmarkAddFunc(<q-args>)
+
+" Mappings
+nnoremap <silent> <C-t> :DeniteBufferDir file/rec<CR>
+nnoremap <silent> <localleader>t :DeniteBufferDir file/rec/noignore<CR>
+nnoremap <silent> <Leader>ls :DeniteBufferDir file/rec<CR>
+nnoremap <silent> <Leader>lS :DeniteBufferDir file/rec/noignore<CR>
+nnoremap <silent> <Leader>lu :execute 'Denite file/rec:' . expand('%:p:h:h')<CR>
+nnoremap <silent> <Leader>lU :execute 'Denite file/rec/noignore:' .
+            \ expand('%:p:h:h')<CR>
+nnoremap <silent> <Leader>sd :call <SID>DeniteScanDir()<CR>
+nnoremap <silent> <Leader>sD :call <SID>DeniteScanDir(0)<CR>
+nnoremap <silent> <localleader>z :Denite z<CR>
+nnoremap <silent> <localleader>c :DeniteBufferDir directory_rec<CR>
+nnoremap <silent> <localleader>d :DeniteBufferDir directory_rec/noignore<CR>
+nnoremap <silent> <localleader>p :DeniteBufferDir -no-start-filter parent_dirs<CR>
+nnoremap <silent> <Leader>rd :Denite fast_file_mru<CR>
+nnoremap <silent> <Leader>be :Denite buffer<CR>
+nnoremap <silent> <Leader>tl :call <SID>DeniteTasklist()<CR>
+nnoremap <silent> <Leader>tL :call <SID>DeniteTasklist('.')<CR>
+nnoremap <silent> <Leader>rg :lcd %:p:h<CR>:call <SID>DeniteGrep(1)<CR>
+nnoremap <silent> <Leader>rG :lcd %:p:h<CR>:call <SID>DeniteGrep(0)<CR>
+nnoremap <silent> <Leader>ig :lcd %:p:h<CR>:call <SID>DeniteGrep(1, 1)<CR>
+nnoremap <silent> <Leader>iG :lcd %:p:h<CR>:call <SID>DeniteGrep(0, 1)<CR>
+nnoremap <silent> <Leader>dg :lcd %:p:h<CR>:DeniteCursorWord -no-start-filter
+            \ grep<CR>
+nnoremap <silent> <Leader>he :Denite help<CR>
+nnoremap <silent> <Leader>yh :Denite neoyank<CR>
+nnoremap <silent> <Leader>sh :Denite history:search<CR>
+nnoremap <silent> <Leader>ch :Denite command_history<CR>
+nnoremap <silent> <Leader>sm :Denite output:messages<CR>
+nnoremap <silent> <Leader>me :Denite output:map<CR>
+nnoremap <silent> <Leader>uf :Denite output:function<CR>
+nnoremap <silent> <Leader>dl :Denite line:forward<CR>
+nnoremap <silent> <Leader>dw :DeniteCursorWord line:forward<CR>
+vnoremap <silent> <Leader>dw :call <SID>DeniteVisualSearch('forward')<CR>
+nnoremap <silent> <Leader>dq :Denite -post-action=suspend quickfix<CR>
+nnoremap <silent> <Leader>gl :Denite gitlog:all<CR>
+nnoremap <silent> <Leader>gL :Denite gitlog<CR>
+nnoremap <silent> <Leader>bm :Denite dirmark<CR>
+nnoremap <silent> <Leader>dr :Denite -resume<CR>
+nnoremap <silent> <Leader>dR :Denite -resume -no-start-filter<CR>
+nnoremap <silent> ]d :Denite -resume -immediately -cursor-pos=+1<CR>
+nnoremap <silent> [d :Denite -resume -immediately -cursor-pos=-1<CR>
+nnoremap ]D :<C-u>Denite -resume -cursor-pos=$<CR>
+nnoremap [D :<C-u>Denite -resume -cursor-pos=0<CR>
+nnoremap <silent> <Leader>te :Denite outline<CR>
+nnoremap <silent> <Leader>tE :NeoIncludeMakeCache<CR>:Denite tag:include<CR>
+" FIXME: This should be improved
+augroup ps_denite_tag
+    au!
+    au BufNewFile,BufRead *.{vim,tex,bib,r,R} nnoremap <buffer> <silent> <C-]>
+                \ :NeoIncludeMakeCache<CR>
+                \ :DeniteCursorWord -immediately
+                \ -default-action=context_split tag:include<CR>
+augroup END
+
+augroup ps_denite_setup
+    au!
+    au FileType denite call s:denite_mappings()
+    au FileType denite setlocal signcolumn=no
+    au FileType denite-filter call s:denite_filter_mappings()
+    au FileType denite-filter
+       \ call deoplete#custom#buffer_option('auto_complete', v:false)
+    au FileType denite-filter setlocal nocursorline
+    au User denite-preview setlocal number winblend=0
+augroup END
+
+" Buffer mappings (note that the denite buffer only has normal mode)
+function! s:denite_mappings() abort
+    " Denite buffer
+    nnoremap <silent><buffer><expr> <ESC> denite#do_map('quit')
+    nnoremap <silent><buffer><expr> <C-c> denite#do_map('quit')
+    nnoremap <silent><buffer><expr> q denite#do_map('quit')
+    nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
+    " Actions
+    nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+    nnoremap <silent><buffer> j :<C-u>call
+        \ <SID>DeniteMoveCursorCandidateWindow('j', v:count1, 'normal')<CR>
+    nnoremap <silent><buffer> <C-n> :<C-u>call
+        \ <SID>DeniteMoveCursorCandidateWindow('j', v:count1, 'normal')<CR>
+    nnoremap <silent><buffer> k :<C-u>call
+        \ <SID>DeniteMoveCursorCandidateWindow('k', v:count1, 'normal')<CR>
+    nnoremap <silent><buffer> <C-p> :<C-u>call
+        \ <SID>DeniteMoveCursorCandidateWindow('k', v:count1, 'normal')<CR>
+    nnoremap <silent><buffer><expr> <C-v> denite#do_map('do_action', 'vsplit')
+    nnoremap <silent><buffer><expr> <C-s> denite#do_map('do_action', 'split')
+    nnoremap <silent><buffer><expr> <C-r> denite#do_map('redraw')
+    nnoremap <silent><buffer><expr> <C-x> denite#do_map('choose_action')
+    nnoremap <silent><buffer><expr> <C-y> denite#do_map('do_action', 'yank')
+    nnoremap <silent><buffer> <Tab> :call <SID>denite_tab_action()<CR>
+    nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select') . 'k'
+    nnoremap <silent><buffer><expr> <C-Space> denite#do_map('toggle_select') . 'k'
+    nnoremap <silent><buffer><expr> <localleader>v denite#do_map('do_action', 'preview')
+    nnoremap <silent><buffer> <localleader>w <C-w>P
+    nnoremap <silent><buffer><expr> <localleader>u denite#do_map('restore_sources')
+    nnoremap <silent><buffer><expr> <C-q> denite#do_map('do_action', 'quickfix')
+    nnoremap <silent><buffer> <localleader>q :call <SID>denite_quickfix_all()<CR>
+    " Custom actions
+    nnoremap <silent><buffer><expr> <localleader>j denite#do_map('do_action',
+                \ 'scroll_preview_down')
+    nnoremap <silent><buffer><expr> <localleader>k denite#do_map('do_action',
+                \ 'scroll_preview_up')
+    nnoremap <silent><buffer><expr> <localleader>f denite#do_map('do_action', 'defx')
+    nnoremap <silent><buffer><expr> <C-t> denite#do_map('do_action',
+                \ 'candidate_file_rec')
+    nnoremap <silent><buffer><expr> <localleader>c denite#do_map('do_action',
+                \ 'candidate_directory_rec')
+    nnoremap <silent><buffer><expr> <localleader>p denite#do_map('do_action',
+                \ 'candidate_parent_dir')
+endfunction
+
+function! s:DeniteMoveCursorCandidateWindow(dir, lines, mode) abort
+    " noautocmd is needed to preserve proper cursorline highlight
+    if a:mode ==# 'filter'
+        noautocmd call win_gotoid(win_findbuf(g:denite#_filter_parent)[0])
+    endif
+    execute 'normal! ' . a:lines . a:dir
+    for nr in range(1, winnr('$'))
+        if getwinvar(nr, '&previewwindow') == 1
+            call denite#call_map('do_action', 'preview')
+            break
+        endif
+    endfor
+    if a:mode ==# 'filter'
+        noautocmd call win_gotoid(g:denite#_filter_winid)
+        startinsert!
+    endif
+endfunction
+
+function! s:denite_filter_mappings() abort
+    " Denite filter buffer
+    inoremap <silent><buffer><expr> <C-c> denite#do_map('quit')
+    inoremap <silent><buffer><expr> <ESC> denite#do_map('quit')
+    nnoremap <silent><buffer><expr> <C-c> denite#do_map('quit')
+    nnoremap <silent><buffer><expr> <ESC> denite#do_map('quit')
+    nnoremap <silent><buffer><expr> q denite#do_map('quit')
+    imap <buffer> <C-e> <Plug>(denite_filter_quit)
+    imap <buffer> <C-h> <C-o>h
+    " Actions
+    inoremap <silent><buffer> <C-j>
+        \ <Esc>:call <SID>DeniteMoveCursorCandidateWindow('j', 1, 'filter')<CR>
+    inoremap <silent><buffer> <C-n>
+        \ <Esc>:call <SID>DeniteMoveCursorCandidateWindow('j', 1, 'filter')<CR>
+    inoremap <silent><buffer> <C-k>
+        \ <Esc>:call <SID>DeniteMoveCursorCandidateWindow('k', 1, 'filter')<CR>
+    inoremap <silent><buffer> <C-p>
+        \ <Esc>:call <SID>DeniteMoveCursorCandidateWindow('k', 1, 'filter')<CR>
+    inoremap <silent><buffer> <C-u>
+        \ <Esc>:call <SID>DeniteMoveCursorCandidateWindow('k', 12, 'filter')<CR>
+    inoremap <silent><buffer> <C-d>
+        \ <Esc>:call <SID>DeniteMoveCursorCandidateWindow('j', 12, 'filter')<CR>
+    inoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+    nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+    inoremap <silent><buffer><expr> <C-v> denite#do_map('do_action', 'vsplit')
+    inoremap <silent><buffer><expr> <C-s> denite#do_map('do_action', 'split')
+    inoremap <silent><buffer><expr> <C-r> denite#do_map('redraw')
+    inoremap <silent><buffer><expr> <C-x> denite#do_map('choose_action')
+    inoremap <silent><buffer><expr> <C-y> denite#do_map('do_action', 'yank')
+    inoremap <silent><buffer> <Tab> <ESC>:call <SID>denite_tab_action()<CR>
+    inoremap <silent><buffer> <C-Space>
+        \ <ESC>:call denite#call_map('toggle_select')<CR><C-w>p
+        \ :call cursor(line('.')-1, 0)<CR><C-w>pA
+    inoremap <silent><buffer><expr> <localleader>v denite#do_map('do_action', 'preview')
+    nnoremap <silent><buffer><expr> <localleader>v denite#do_map('do_action', 'preview')
+    inoremap <silent><buffer> <localleader>w <Esc><C-w>P
+    inoremap <silent><buffer><expr> <localleader>u denite#do_map('restore_sources')
+    inoremap <silent><buffer><expr> <C-q> denite#do_map('do_action', 'quickfix')
+    inoremap <silent><buffer> <localleader>q <ESC>:call <SID>denite_quickfix_all()<CR>
+    " Custom actions
+    inoremap <silent><buffer><expr> <localleader>j denite#do_map('do_action',
+                \ 'scroll_preview_down')
+    inoremap <silent><buffer><expr> <localleader>k denite#do_map('do_action',
+                \ 'scroll_preview_up')
+    inoremap <silent><buffer><expr> <localleader>f denite#do_map('do_action', 'defx')
+    inoremap <silent><buffer><expr> <C-t> denite#do_map('do_action',
+                \ 'candidate_file_rec')
+    inoremap <silent><buffer><expr> <localleader>c denite#do_map('do_action',
+                \ 'candidate_directory_rec')
+    inoremap <silent><buffer><expr> <localleader>p denite#do_map('do_action',
+                \ 'candidate_parent_dir')
+endfunction
+
+" Custom actions
+function! s:my_split(context)
+    let split_action = 'vsplit'
+    if winwidth(winnr('#')) <= 2 * (&textwidth ? &textwidth : 80)
+        let split_action = 'split'
+    endif
+    call denite#do_action(a:context, split_action, a:context['targets'])
+endfunction
+function! s:defx_open(context)
+    let path = a:context['targets'][0]['action__path']
+    let file = fnamemodify(path, ':p')
+    let file_search = filereadable(expand(file)) ? ' -search=' . file : ''
+    let dir = denite#util#path2directory(path)
+    if &filetype ==# 'defx'
+      call defx#call_action('cd', [dir])
+      call defx#call_action('search', [file])
+    else
+        execute('Defx ' . dir . file_search)
+    endif
+endfunction
+function! s:defx_preview(context)
+    let path = a:context['targets'][0]['action__path']
+    let dir = denite#util#path2directory(path)
+    let file = fnamemodify(path, ':p')
+    let file_search = filereadable(expand(file)) ? ' -search=' . file : ''
+
+    let has_preview_win = 0
+    let defx_path = 0
+    for nr in range(1, winnr('$'))
+        if getwinvar(nr, '&previewwindow') == 1
+            let has_preview_win = 1
+            let defx_var = getbufvar(winbufnr(nr), 'defx')
+            let defx_path =  defx_var.paths[0]
+        endif
+    endfor
+    if has_preview_win == 1 && defx_path ==# (dir . '/')
+        call defx#custom#column('filename', {'min_width': 23, 'max_width': -55})
+        pclose!
+        return
+    endif
+
+    let pos = win_screenpos(win_getid())
+    let win_row = pos[0] - 1
+    let win_col = (pos[1] - 1) + winwidth(0) - a:context.preview_width
+
+    execute 'silent rightbelow vertical pedit! defx_tmp'
+    wincmd P
+    silent! setlocal nobuflisted
+    call nvim_win_set_config(win_getid(), {
+        \ 'relative': 'editor',
+        \ 'row': win_row,
+        \ 'col': win_col,
+        \ 'width': a:context.preview_width,
+        \ 'height': a:context.preview_height,
+        \ })
+    let fn_width = 45
+    call defx#custom#column('filename',
+        \ {'min_width': fn_width, 'max_width': fn_width })
+    execute 'Defx -no-show-ignored-files -new -split=no ' .
+                \ '-ignored-files=.*,__pycache__ ' .
+                \ '-auto-recursive-level=1 ' .  dir . file_search
+    call defx#call_action('open_tree', 'toggle')
+    silent! setlocal norelativenumber nonumber
+    doautocmd User denite-preview
+    wincmd p
+endfunction
+function! s:candidate_file_rec(context)
+    let path = a:context['targets'][0]['action__path']
+    let narrow_dir = denite#util#path2directory(path)
+    let sources_queue = a:context['sources_queue'] + [[
+            \ {'name': 'file/rec/noignore', 'args': [narrow_dir]},
+            \ ]]
+    return {'sources_queue': sources_queue}
+endfunction
+function! s:candidate_directory_rec(context)
+    let path = a:context['targets'][0]['action__path']
+    let narrow_dir = denite#util#path2directory(path)
+    let sources_queue = a:context['sources_queue'] + [[
+            \ {'name': 'directory_rec/noignore', 'args': [narrow_dir]},
+            \ ]]
+    return {'sources_queue': sources_queue}
+endfunction
+function! s:candidate_parent_dir(context)
+    let path = a:context['targets'][0]['action__path']
+    let narrow_dir = denite#util#path2directory(path)
+    let sources_queue = a:context['sources_queue'] + [[
+            \ {'name': 'parent_dirs', 'args': [narrow_dir]},
+            \ ]]
+    return {'sources_queue': sources_queue}
+endfunction
+function! s:scroll_preview_down(context)
+    wincmd P
+    execute 'normal! 10j'
+    wincmd p
+endfunction
+function! s:scroll_preview_up(context)
+    wincmd P
+    execute 'normal! 10k'
+    wincmd p
+endfunction
+function! s:yank_commit(context)
+    let candidate = a:context['targets'][0]['word']
+    let commit_hash = matchstr(candidate, '*\s\+\zs\w*\ze\s-')
+    call setreg('+', commit_hash)
+endfunction
+function! s:denite_quickfix_all()
+    call denite#call_map('toggle_select_all')
+    call denite#call_map('do_action', 'quickfix')
+endfunction
+function! s:denite_tab_action()
+    let source_name = b:denite_statusline.sources
+    if match(source_name, '^history') != -1
+        " Edit action in history search source is called feedkeys
+        call denite#call_map('do_action', 'feedkeys')
+    else
+        call denite#call_map('do_action', 'edit')
+    endif
+endfunction
+call denite#custom#action('buffer,directory,file', 'context_split',
+        \ function('s:my_split'))
+call denite#custom#action('buffer,directory,file,openable,dirmark', 'defx',
+        \ function('s:defx_open'))
+call denite#custom#action('directory,directory_rec,directory_rec/noignore,' .
+        \'dirmark', 'preview', function('s:defx_preview'), {'is_quit': 0})
+call denite#custom#action('buffer,directory,file,openable,dirmark',
+        \ 'candidate_file_rec', function('s:candidate_file_rec'))
+call denite#custom#action('buffer,directory,file,openable,dirmark',
+        \ 'candidate_directory_rec', function('s:candidate_directory_rec'))
+call denite#custom#action('buffer,directory,file,openable,dirmark',
+        \ 'candidate_parent_dir', function('s:candidate_parent_dir'))
+call denite#custom#action('file', 'narrow',
+        \ {context -> denite#do_action(context, 'open', context['targets'])})
+call denite#custom#action('buffer,directory,file,openable,dirmark,gitlog',
+        \ 'scroll_preview_down', function('s:scroll_preview_down'),
+        \ {'is_quit': 0})
+call denite#custom#action('buffer,directory,file,openable,dirmark,gitlog',
+        \ 'scroll_preview_up', function('s:scroll_preview_up'),
+        \ {'is_quit': 0})
+call denite#custom#action('gitlog', 'yank', function('s:yank_commit'))

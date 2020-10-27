@@ -1,0 +1,15 @@
+ebe339ecceae685bc8ae97b30fc178c3|untitled:23|41|29|v|
+	. su
+13aae7f7f3ae40998df13b7d82ae91b2|file:///home/omega12beta/.dotfiles/.gitignore|10|1|v|gitignore
+	
+	# Environments
+	.env
+	.venv
+	env/
+	venv/
+	ENV/
+	env.bak/
+	venv.bak/
+	pythonenv*
+	
+	

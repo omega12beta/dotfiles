@@ -1,0 +1,48 @@
+[Private]
+PopularUrls=file:///,file:///home/omega12beta/.dotfiles/go/pkg/,file:///home/omega12beta/.dotfiles/go/pkg/mod/,file:///home/omega12beta/.dotfiles/go/,file:///home/omega12beta/,file:///home/omega12beta/.dotfiles/,file:///home/omega12beta/.dotfiles/.local/share/Trash/,file:///home/omega12beta/.dotfiles/.fzf/,file:///home/omega12beta/.dotfiles/.local/share/Trash/files/,file:///home/omega12beta/.dotfiles/.config/,file:///home/omega12beta/.dotfiles/.config/cmus/playlists/,file:///home/omega12beta/.dotfiles/.config/cmus/,file:///home/omega12beta/.dotfiles/.local/share/,file:///home/omega12beta/.dotfiles/.fzf/.git/objects/,file:///home/omega12beta/.dotfiles/.local/,file:///home/omega12beta/.dotfiles/.fzf/.git/objects/08/,file:///home/omega12beta/.dotfiles/.fzf/.git/,file:///home/omega12beta/.dotfiles/.zsh/rc/myplugins/,file:///home/omega12beta/.dotfiles/.zsh/rc/pluginconfig/,file:///home/omega12beta/.dotfiles/.zsh/zfunc/,file:///home/omega12beta/.dotfiles/.zinit/completions/,file:///home/omega12beta/.dotfiles/.zsh/,file:///home/omega12beta/.dotfiles/.zsh/completion.local/,file:///home/omega12beta/.dotfiles/.zinit/plugins/b4b4r07---enhancd/,file:///home/omega12beta/.dotfiles/.zsh/rc/,file:///home/omega12beta/.dotfiles/.zinit/plugins/b4b4r07---enhancd/._zinit/,file:///home/omega12beta/.dotfiles/.zsh/zkbd/,file:///home/omega12beta/.dotfiles/.zinit/plugins/b4b4r07---enhancd/.git/,file:///home/omega12beta/.dotfiles/.zsh/zinit/,file:///home/omega12beta/.dotfiles/.zinit/plugins/b4b4r07---enhancd/.github/,file:///home/omega12beta/.dotfiles/.zinit/plugins/
+PopularUrlsRank=20,4,3,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+
+[Startup]
+Left Side Is Active=false
+
+[Startup][Left Tab Bar][Tabs][Tab0]
+PinnedUrl=
+Properties=0
+Type=0
+Url=file:///
+
+[Startup][Left Tab Bar][Tabs][Tab0][History]
+CurrentIndex=0
+CurrentItems=.vim,.electron-gyp,.zsh,..,._zinit,b4b4r07---enhancd,plugins,.zinit,.dotfiles,..,..,share
+Entrys=file:///,file:///home/omega12beta,file:///home/omega12beta/.dotfiles,file:///home/omega12beta/.dotfiles/.zinit/plugins,file:///home/omega12beta/.dotfiles/.zinit/plugins/b4b4r07---enhancd,file:///home/omega12beta/.dotfiles/.zinit/plugins,file:///home/omega12beta/.dotfiles/.zinit,file:///home/omega12beta/.dotfiles,file:///home/omega12beta,file:///home/omega12beta/.local,file:///home/omega12beta/.local/share,file:///home/omega12beta/.local
+
+[Startup][Left Tab Bar][Tabs][Tab0][View]
+AutoResizeColumns=true
+Descending Sort Order=0
+Filter=3
+FilterApplysToDirs=false
+IconSize=22
+Saved State=\x00\x00\x00\xff\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x0b\xa8\x07\x00\x00\x00\x06\x00\x00\x00\t\x00\x00\x00d\x00\x00\x00\n\x00\x00\x00d\x00\x00\x00\x03\x00\x00\x00d\x00\x00\x00\x05\x00\x00\x00d\x00\x00\x00\x07\x00\x00\x00d\x00\x00\x00\x08\x00\x00\x00d\x00\x00\x03:\x00\x00\x00\x0b\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00d\xff\xff\xff\xff\x00\x00\x00\x81\x00\x00\x00\x00\x00\x00\x00\x0b\x00\x00\x023\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00.\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00P\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00n\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x1b\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03\xe8\x00\x00\x00\x00d
+ShowPreviews=false
+Sort Column=0
+
+[Startup][Right Tab Bar][Tabs][Tab0]
+PinnedUrl=
+Properties=0
+Type=0
+Url=file:///home/omega12beta
+
+[Startup][Right Tab Bar][Tabs][Tab0][History]
+CurrentIndex=0
+CurrentItems=.dotfiles,..,.dotfiles,..,..,.fzf,..,..,playlists,cmus,.config,..,share
+Entrys=file:///home/omega12beta,file:///home/omega12beta/.dotfiles,file:///home/omega12beta,file:///home/omega12beta/.dotfiles,file:///home/omega12beta/.dotfiles/.fzf,file:///home/omega12beta/.dotfiles,file:///home/omega12beta/.dotfiles/.config,file:///home/omega12beta/.dotfiles/.config/cmus/playlists,file:///home/omega12beta/.dotfiles/.config/cmus,file:///home/omega12beta/.dotfiles/.config,file:///home/omega12beta/.dotfiles,file:///home/omega12beta/.dotfiles/.local/share,file:///home/omega12beta/.dotfiles/.local
+
+[Startup][Right Tab Bar][Tabs][Tab0][View]
+AutoResizeColumns=true
+Descending Sort Order=0
+Filter=3
+FilterApplysToDirs=false
+IconSize=12
+Saved State=\x00\x00\x00\xff\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x0b\xa8\x07\x00\x00\x00\x06\x00\x00\x00\t\x00\x00\x00d\x00\x00\x00\n\x00\x00\x00d\x00\x00\x00\x03\x00\x00\x00d\x00\x00\x00\x05\x00\x00\x00d\x00\x00\x00\x07\x00\x00\x00d\x00\x00\x00\x08\x00\x00\x00d\x00\x00\x03\xfc\x00\x00\x00\x0b\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00d\xff\xff\xff\xff\x00\x00\x00\x81\x00\x00\x00\x00\x00\x00\x00\x0b\x00\x00\x02\xf5\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00.\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00P\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00n\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x1b\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03\xe8\x00\x00\x00\x00d
+ShowPreviews=false
+Sort Column=0

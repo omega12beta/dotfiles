@@ -1,0 +1,93 @@
+{
+    "com.github.dcervenkov.ulauncher-z-search": {
+        "id": "com.github.dcervenkov.ulauncher-z-search",
+        "url": "https://github.com/dcervenkov/ulauncher-z-search",
+        "updated_at": "2020-10-15T23:37:00.684343",
+        "last_commit": "a9275f6e538ea108588190fde25b605dddc81d81",
+        "last_commit_time": "2020-07-05T10:41:13"
+    },
+    "com.github.sebw.ulauncher-jrnl": {
+        "id": "com.github.sebw.ulauncher-jrnl",
+        "url": "https://github.com/sebw/ulauncher-jrnl",
+        "updated_at": "2020-10-16T21:36:09.138069",
+        "last_commit": "533e1b553707b5d9711f1adf1cb469ba4d70c234",
+        "last_commit_time": "2020-10-16T10:36:48"
+    },
+    "com.github.psukys.ulauncher-plugin-windows": {
+        "id": "com.github.psukys.ulauncher-plugin-windows",
+        "url": "https://github.com/psukys/ulauncher-plugin-windows",
+        "updated_at": "2020-10-16T21:46:31.104051",
+        "last_commit": "455b8dd34e5c1236c3001480f86964b178a74725",
+        "last_commit_time": "2019-11-29T09:14:17"
+    },
+    "com.github.ralcaidev.ulauncher-extension-list": {
+        "id": "com.github.ralcaidev.ulauncher-extension-list",
+        "url": "https://github.com/ralcaidev/ulauncher-extension-list",
+        "updated_at": "2020-10-16T21:47:09.345619",
+        "last_commit": "0cb7711bc1dc89a76bcb89d29082e18deac28227",
+        "last_commit_time": "2019-07-19T06:31:41"
+    },
+    "com.github.adamtillou.ulauncher-aurman-plugin": {
+        "id": "com.github.adamtillou.ulauncher-aurman-plugin",
+        "url": "https://github.com/AdamTillou/ulauncher-aurman-plugin",
+        "updated_at": "2020-10-16T21:47:49.959608",
+        "last_commit": "f1873c7c5dcad002ca0a3f0e5fb9f5b3b8a88dbe",
+        "last_commit_time": "2020-07-17T03:09:31"
+    },
+    "com.github.nesivmi.ulauncher-iplik": {
+        "id": "com.github.nesivmi.ulauncher-iplik",
+        "url": "https://github.com/nesivmi/ulauncher-iplik",
+        "updated_at": "2020-10-16T21:49:15.048433",
+        "last_commit": "bb423f466f55abde174a1c8c2555a2a02b72aad2",
+        "last_commit_time": "2019-09-16T20:15:21"
+    },
+    "com.github.brpaz.ulauncher-docsearch": {
+        "id": "com.github.brpaz.ulauncher-docsearch",
+        "url": "https://github.com/brpaz/ulauncher-docsearch",
+        "updated_at": "2020-10-16T21:50:49.785530",
+        "last_commit": "6be7623e921647ab3a881eccdf9f0b5063f0260a",
+        "last_commit_time": "2020-07-11T14:36:26"
+    },
+    "com.github.ulauncher.ulauncher-kill": {
+        "id": "com.github.ulauncher.ulauncher-kill",
+        "url": "https://github.com/Ulauncher/ulauncher-kill",
+        "updated_at": "2020-10-16T21:52:49.871622",
+        "last_commit": "7ba3f9fb273c4cbbecd26352c88a3156205417db",
+        "last_commit_time": "2020-01-05T13:02:00"
+    },
+    "com.github.brpaz.ulauncher-github": {
+        "id": "com.github.brpaz.ulauncher-github",
+        "url": "https://github.com/brpaz/ulauncher-github",
+        "updated_at": "2020-10-16T21:53:33.145310",
+        "last_commit": "cf75ed7bc1071eb5c12376b66a25ba6c47fcffad",
+        "last_commit_time": "2020-05-31T16:20:09"
+    },
+    "com.github.zensoup.ulauncher-unicode": {
+        "id": "com.github.zensoup.ulauncher-unicode",
+        "url": "https://github.com/zensoup/ulauncher-unicode",
+        "updated_at": "2020-10-16T21:54:10.901706",
+        "last_commit": "0ad36c00a888e687b4bfbf76f266f1000040b337",
+        "last_commit_time": "2019-07-11T06:53:31"
+    },
+    "com.github.iboyperson.ulauncher-system": {
+        "id": "com.github.iboyperson.ulauncher-system",
+        "url": "https://github.com/iboyperson/ulauncher-system",
+        "updated_at": "2020-10-16T21:54:47.000462",
+        "last_commit": "3b2639fd106ed3ef664953eb868b80c2fb8428ea",
+        "last_commit_time": "2020-09-22T18:29:15"
+    },
+    "com.github.elken.terminal-runner": {
+        "id": "com.github.elken.terminal-runner",
+        "url": "https://github.com/elken/Terminal-Runner",
+        "updated_at": "2020-10-16T22:13:11.349752",
+        "last_commit": "6807ebe6047462bcce6063c63228eddcb8c6b481",
+        "last_commit_time": "2020-02-22T23:04:04"
+    },
+    "com.github.friday.ulauncher-hash2": {
+        "id": "com.github.friday.ulauncher-hash2",
+        "url": "https://github.com/friday/ulauncher-hash2",
+        "updated_at": "2020-10-16T22:15:20.398772",
+        "last_commit": "3bdf53e983e662625eb6eb144b3e66605cfffe39",
+        "last_commit_time": "2019-06-19T00:15:58"
+    }
+}
