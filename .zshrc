@@ -92,3 +92,74 @@ source ~/.zsh/rc/completions.zsh
 
 #Old+Stuff I don't need
 source ~/.zsh/rc/old-post.zsh
+
+zmodload -i zsh/complist
+#==============================================================#
+##          Completion                                        ##
+#==============================================================#
+
+setopt prompt_subst          # escape sequence
+
+autoload -Uz compinit && compinit
+zstyle ':completion:*' verbose yes
+## _oldlist
+## _complete:
+## _ignored:
+## _match:
+## _prefix:
+## _approximate:
+## _expand:
+## _history:
+## _correct:
+zstyle ':completion:*' completer _oldlist _complete _ignored
+zstyle ':completion:*:messages' format '%F{yellow}%d'
+zstyle ':completion:*:warnings' format '%B%F{red}No matches for:''%F{white}%d%b'
+zstyle ':completion:*:descriptions' format '%B%F{white}--- %d ---%f%b'
+zstyle ':completion::corrections' format ' %F{green}%d (errors: %e) %f'
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' keep-prefix
+zstyle ':completion:*' recent-dirs-insert both
+zstyle ':completion:*' list-colors "${LS_COLORS}"
+zstyle ':completion:*' special-dirs true
+#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+zstyle ':completion:*' use-cache true
+# zstyle show completion menu if 1 or more items to select
+zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*:cd:*' tag-order local-directories path-directories
+zstyle ':completion:*:cd:*' group-order local-directories path-directories
+zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
+zstyle ':completion:*:manuals' separate-sections true
+zstyle ':completion:*' file-sort 'modification'
+
+# make completion is slow
+zstyle ':completion:*:make:*:targets' call-command true
+zstyle ':completion:*:make::' tag-order targets:
+zstyle ':completion:*:*:*make:*:targets' command awk \''/^[a-zA-Z0-9][^\/\t=]+:/ {print $1}'\' \$file
+#zstyle ':completion:*:*:make:*:targets' ignored-patterns '*.o'
+#zstyle ':completion:*:*:*make:*:*' tag-order '!targets !functions !file-patterns'
+#zstyle ':completion:*:*:*make:*:*' avoid-completer '_files'
+
+#
+#zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+#zstyle ':completion:*' expand prefix suffix
+#zstyle ':completion:*' file-sort modification
+#zstyle ':completion:*' format '%d'
+#zstyle ':completion:*' group-name ''
+#zstyle ':completion:*' insert-unambiguous false
+#zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+#zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+#zstyle ':completion:*' list-suffixes true
+#zstyle ':completion:*' menu select=1
+#zstyle ':completion:*' original true
+#zstyle ':completion:*' preserve-prefix '//[^/]##/'
+#zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+#zstyle ':completion:*' squeeze-slashes true
+zstyle :compinstall filename '/home/omega12beta//.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
