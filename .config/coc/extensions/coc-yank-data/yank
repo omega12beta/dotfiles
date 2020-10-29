@@ -13,3 +13,10 @@ ebe339ecceae685bc8ae97b30fc178c3|untitled:23|41|29|v|
 	pythonenv*
 	
 	
+7d4f35b637cfe545bd215ef31246a51b|file:///home/omega12beta/.zsh/rc/aliases.zsh|36|9|v|zsh
+	qa='tmux kill-'
+	
+63d597639e300afc57849e36a242dd40|file:///home/omega12beta/.zsh/rc/aliases.zsh|36|13|v|zsh
+	tmux list-clients | tmux list-sessions | tmux list-windows | tmux list-panes'
+ba595f9e4d9146faa7e13cb74fb96bca|file:///home/omega12beta/.zsh/rc/aliases.zsh|36|13|v|zsh
+	tmux list-clients | tmux list-sessions | tmux list-windows | tmux list-panes

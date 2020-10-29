@@ -1,4 +1,17 @@
 /home/omega12beta/.cfg/COMMIT_EDITMSG
+/home/omega12beta/.zsh/rc/aliases.zsh
+/home/omega12beta/.config/tmuxinator/Triumvirate.yml
+/home/omega12beta/.vim/rc/pluginlist.vim
+/home/omega12beta/.vim/rc/function.vim
+/home/omega12beta/.vim/rc/autocmd.vim
+/home/omega12beta/.vim/rc/pluginconfig.vim
+/home/omega12beta/.tmux/plugins/tpm/bin/install_plugins
+/home/omega12beta/.tmux/plugins/tpm/scripts/install_plugins.sh
+/home/omega12beta/.tmux/conf/plugin.tmux
+/home/omega12beta/.tmux/conf/color.tmux
+/home/omega12beta/.tmux/conf/bind.tmux
+/home/omega12beta/.tmux/conf/base.tmux
+/home/omega12beta/.tmux.conf
 /home/omega12beta/scripts/strap.sh
 /home/omega12beta/.zsh/rc/option.zsh
 /home/omega12beta/.zsh/rc/options.zsh
